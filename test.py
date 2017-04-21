@@ -1,5 +1,5 @@
 # encoding: utf-8
-
+from flask import Flask
 
 """
 @version: ??
@@ -11,16 +11,13 @@
 @file: test.py
 @time: 2017/4/21 下午10:40
 """
+app = Flask(__name__)
 
 
-def func():
-    pass
-
-
-class Main():
-    def __init__(self):
-        pass
+@app.route('/')
+def index():
+    return 'hello flask'
 
 
 if __name__ == '__main__':
-    pass
+    app.run(debug=True)
